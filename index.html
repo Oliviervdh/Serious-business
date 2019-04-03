@@ -53,7 +53,7 @@
     </div>
 
     <div class="right-c">
-        <p id="now">Dreamland currently open until 18:30</p>
+        <p id="now">We are currently closed. Sorry for the inconvenience</p>
 
         <form name="Tick">
             <input type="text" size="12" name="Clock">
@@ -95,7 +95,7 @@
     window.addEventListener("load", checkOpen,)
 
 
-    // for loop of all your classnames
+    // for loop of all your class names
 
     function checkOpen() {
         var digital=new Date()
@@ -103,29 +103,20 @@
         var minutes=digital.getMinutes()
         var seconds=digital.getSeconds()
         var open;
-        var checkDays = document.getElementsByClassName("yes") // on this variable do a for loop to go though all the elements within the list.
-        var openDays = ["monday", "tuesday", "wednesday", "thursday","friday", "saturday",]; // array with the inner html of your classes "yes"
 
-        if (hours < 10){
-            open = "We are currently closed. Sorry for the inconvenience";
-        }
+        if (digital.getDay() >= 0 && digital.getDay() <= 6) {
 
-        else if (hours  === 18 && minutes > 15){ // needs to be optimised. it needs to be both are true,
-            open = "We are currently closed. Sorry for the inconvenience";
-        }
-        else if (hours < 18 ){ // needs to be optimised. it needs to be both are true,
-            open = "We are currently open until 18:30";
-        }
+            if (hours < 10) {
+                open = "We are currently closed. Sorry for the inconvenience";
+            } else if (hours === 18 && minutes > 30) { // needs to be optimised. it needs to be both are true,
+                open = "We are currently closed. Sorry for the inconvenience";
+            } else if (hours < 18) { // needs to be optimised. it needs to be both are true,
+                open = "We are currently open until 18:30";
+            }
 
-        document.getElementById("now").innerHTML = open;
+            document.getElementById("now").innerHTML = open;
+        }
     }
-
-
-
-
-
-
-    //create a array of classes for all the days of the week when the business is open
 
 
 
