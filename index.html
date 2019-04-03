@@ -22,28 +22,28 @@
             </tr>
             <tr>
                 <td>Monday</td>
-                <td>10:00 - 18:30</td>
+                <td id="monday">10:00 - 18:30</td>
 
             </tr>
             <tr>
                 <td>Tuesday</td>
-                <td>10:00 - 18:30</td>
+                <td id="thursday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Wednesday</td>
-                <td>10:00 - 18:30</td>
+                <td id="wednesday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Thursday</td>
-                <td>10:00 - 18:30</td>
+                <td id="thursday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Friday</td>
-                <td>10:00 - 18:30</td>
+                <td id="friday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Saturday</td>
-                <td>10:00 - 18:30</td>
+                <td id="saturday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Sunday</td>
@@ -53,6 +53,9 @@
     </div>
 
     <div class="right-c">
+
+        <p><button class="w3-button w3-black w3-round-large" id="close">Close early</button></p>
+
         <p id="now">We are currently closed. Sorry for the inconvenience</p>
 
         <form name="Tick">
@@ -95,8 +98,6 @@
     window.addEventListener("load", checkOpen,)
 
 
-    // for loop of all your class names
-
     function checkOpen() {
         var digital=new Date()
         var hours=digital.getHours()
@@ -116,6 +117,57 @@
 
             document.getElementById("now").innerHTML = open;
         }
+    }
+
+
+    // Close early on click
+
+    var button = document.getElementById("close")
+    button.addEventListener("click", closeEarly,)
+
+    function closeEarly () {
+
+        var date = new Date ();
+
+        // check day,
+         var day = date.getDay ();
+
+        // check time
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+
+
+        // if var day = 0 change monday innerHTML to hours + ":" + minutes;, if var day = 3 change wednesday innerHTML to hours + ":" + minutes;
+
+        if (day === 1){
+            document.getElementById("monday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+        if (day === 2){
+            document.getElementById("tuesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+        if (day === 3){
+            document.getElementById("wednesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+        if (day === 4){
+            document.getElementById("thursday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+        if (day === 5){
+            document.getElementById("friday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+        if (day === 6){
+            document.getElementById("saturday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+
+        }
+
+
+
+
+
     }
 
 

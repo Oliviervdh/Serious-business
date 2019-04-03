@@ -14,12 +14,14 @@
 
 .right-c {
     display: grid;
-    padding-top: 85px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin-right: 100px;
     margin-top: 50px;
     text-align: center;
+    align-items: center;
     background-color: #ddd;
-    height: 120px;
+    height: 155px;
 }
 
 #hours {
@@ -45,4 +47,8 @@
 }
 
 #now { color: green;
+}
+
+button {
+    display: inline-block;
 }
