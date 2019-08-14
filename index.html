@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>Tuesday</td>
-                <td id="thursday">10:00 - 18:30</td>
+                <td id="tuesday">10:00 - 18:30</td>
             </tr>
             <tr>
                 <td>Wednesday</td>
@@ -99,10 +99,9 @@
 
 
     function checkOpen() {
-        var digital=new Date()
-        var hours=digital.getHours()
-        var minutes=digital.getMinutes()
-        var seconds=digital.getSeconds()
+        var digital=new Date();
+        var hours=digital.getHours();
+        var minutes=digital.getMinutes();
         var open;
 
         if (digital.getDay() >= 1 && digital.getDay() <= 6) {
@@ -122,8 +121,8 @@
 
     // Close early on click
 
-    var button = document.getElementById("close")
-    button.addEventListener("click", closeEarly,)
+    var button = document.getElementById("close");
+    button.addEventListener("click", closeEarly,);
 
     function closeEarly () {
 
@@ -137,43 +136,68 @@
         var minutes = date.getMinutes();
 
 
-        // if var day = 0 change monday innerHTML to hours + ":" + minutes;, if var day = 3 change wednesday innerHTML to hours + ":" + minutes;
+        // if var day = 1 change monday innerHTML to hours + ":" + minutes;, if var day = 3 change wednesday innerHTML to hours + ":" + minutes;
 
-        if (day === 1){
-            document.getElementById("monday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+        if (day === 1 ){
+            if( minutes < 10 ){
+                document.getElementById("monday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("monday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
         if (day === 2){
-            document.getElementById("tuesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+            if( minutes < 10 ){
+                document.getElementById("tuesday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("tuesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
         if (day === 3){
-            document.getElementById("wednesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+            if( minutes < 10 ){
+                document.getElementById("wednesday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("wednesday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
         if (day === 4){
-            document.getElementById("thursday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+            if( minutes < 10 ){
+                document.getElementById("thursday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("thursday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
         if (day === 5){
-            document.getElementById("friday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+            if( minutes < 10 ){
+                document.getElementById("friday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("friday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
         if (day === 6){
-            document.getElementById("saturday").innerHTML = "10:00 -"+ hours + ":" + minutes;
-            document.getElementById("now").innerHTML = "We closed early";
-
+            if( minutes < 10 ){
+                document.getElementById("saturday").innerHTML = "10:00 -"+ hours + ":0" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
+            else{
+                document.getElementById("saturday").innerHTML = "10:00 -"+ hours + ":" + minutes;
+                document.getElementById("now").innerHTML = "We closed early";
+            }
         }
-
-
-
-
-
     }
 
 
